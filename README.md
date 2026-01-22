@@ -25,10 +25,10 @@ Bu proje Cloudflare Pages için yapılandırılmıştır.
 Cloudflare Pages dashboard'da aşağıdaki ayarları yapın:
 
 1. **Build command**: `npm run build`
-2. **Build output directory**: `.output/public`
-3. **Deploy command**: **BOŞ BIRAKIN** (Cloudflare Pages otomatik deploy yapar)
+2. **Build output directory**: `dist` ⚠️ (`.output/public` değil!)
+3. **Deploy command**: **MUTLAKA BOŞ BIRAKIN VEYA SİLİN** ❌ (Cloudflare Pages otomatik deploy yapar)
 
-⚠️ **ÖNEMLİ**: Deploy command alanına `npx wrangler deploy` yazmayın! Cloudflare Pages otomatik olarak deploy eder. Eğer manuel deploy yapmak isterseniz, `wrangler pages deploy` komutunu kullanın.
+⚠️ **KRİTİK HATA**: Deploy command alanına `npx wrangler deploy` yazmayın! Bu Workers komutudur, Pages için geçersizdir. Cloudflare Pages otomatik olarak deploy eder. Eğer manuel deploy yapmak isterseniz, `wrangler pages deploy dist` komutunu kullanın.
 
 ### Environment Variables
 
@@ -43,7 +43,7 @@ Eğer manuel deploy yapmak isterseniz:
 
 ```bash
 npm run build
-npx wrangler pages deploy .output/public
+npx wrangler pages deploy dist --project-name=kurbanoglu-main
 ```
 
 ## Yapılandırma
