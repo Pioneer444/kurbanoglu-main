@@ -1,0 +1,38 @@
+/* Global styles - minimal to not conflict with Nuxt UI/Tailwind */
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero title style */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.625rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Scroll animation for partner logos */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* Print styles - hide global chrome like header, footer, social icons and WhatsApp button */
+@media print {
+  .app-header,
+  .app-footer,
+  .footer-social,
+  .whatsapp-button {
+    display: none !important;
+  }
+}

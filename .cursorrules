@@ -1,0 +1,271 @@
+# Cursor Rules - Kurbanoglu Nuxt 3 SSR Projesi
+
+## Proje Kapsamı
+
+Bu proje, SSR (Server-Side Rendering) destekli bir Nuxt 3 uygulamasıdır. Proje aşağıdaki özellikleri içerecek şekilde geliştirilmektedir:
+
+- **Framework**: Nuxt 3 (v3.16+)
+- **Rendering**: SSR (Server-Side Rendering) aktif
+- **Deployment**: Cloudflare Pages
+- **CMS**: WordPress (GraphQL API)
+- **Port**: 3000 (development)
+- **Dil Desteği**: i18n (Türkçe ve İngilizce)
+- **API**: GraphQL (Apollo Client) - WordPress GraphQL endpoint
+- **SEO**: @nuxtjs/seo modülü ile optimizasyon
+- **UI Framework**: Nuxt UI
+- **Styling**: Tailwind CSS
+- **TypeScript**: Aktif (strict mode)
+
+### Planlanan Özellikler
+1. ✅ Temel Nuxt 3 SSR yapısı
+2. ⏳ i18n (çoklu dil desteği) - @nuxtjs/i18n
+3. ⏳ GraphQL entegrasyonu - @nuxtjs/apollo
+4. ⏳ SEO optimizasyonu - @nuxtjs/seo
+
+### Klasör Yapısı
+```
+/
+├── assets/          # CSS, görseller, fontlar
+├── components/      # Vue bileşenleri (PascalCase)
+├── composables/     # Composable fonksiyonlar (use<Name>)
+├── layouts/         # Layout şablonları
+├── locales/         # i18n translation dosyaları
+├── middleware/      # Route middleware'leri
+├── pages/           # Sayfa route'ları
+├── plugins/         # Nuxt plugin'leri
+├── public/          # Statik dosyalar
+├── server/          # Server-side kod
+│   ├── api/         # API route'ları
+│   └── middleware/  # Server middleware
+└── utils/           # Yardımcı fonksiyonlar
+```
+
+---
+
+## Teknik Uzmanlık
+
+You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, Nuxt UI, and Tailwind CSS. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
+
+---
+
+## Code Style and Structure
+
+- Write clean, maintainable, and technically accurate TypeScript code.
+- Prioritize functional and declarative programming patterns; avoid using classes.
+- Emphasize iteration and modularization to follow DRY principles and minimize code duplication.
+- Prefer Composition API `<script setup>` style.
+- Use Composables to encapsulate and share reusable client-side logic or state across multiple components in your Nuxt application.
+
+---
+
+## Nuxt 3 Specifics
+
+- Nuxt 3 provides auto imports, so there's no need to manually import 'ref', 'useState', or 'useRouter'.
+- For color mode handling, use the built-in '@nuxtjs/color-mode' with the 'useColorMode()' function.
+- Take advantage of VueUse functions to enhance reactivity and performance (except for color mode management).
+- Use the Server API (within the server/api directory) to handle server-side operations like database interactions, authentication, or processing sensitive data that must remain confidential.
+- Use `useRuntimeConfig` to access and manage runtime configuration variables that differ between environments and are needed both on the server and client sides.
+- For SEO use `useHead` and `useSeoMeta`.
+- For images use `<NuxtImage>` or `<NuxtPicture>` component and for Icons use Nuxt Icons module.
+- Use `app.config.ts` for app theme configuration.
+
+---
+
+## Fetching Data
+
+1. Use `useFetch` for standard data fetching in components that benefit from SSR, caching, and reactively updating based on URL changes.
+2. Use `$fetch` for client-side requests within event handlers or when SSR optimization is not needed.
+3. Use `useAsyncData` when implementing complex data fetching logic like combining multiple API calls or custom caching and error handling.
+4. Set `server: false` in `useFetch` or `useAsyncData` options to fetch data only on the client side, bypassing SSR.
+5. Set `lazy: true` in `useFetch` or `useAsyncData` options to defer non-critical data fetching until after the initial render.
+
+### GraphQL Data Fetching - WordPress CMS
+- **CMS Backend**: WordPress with WPGraphQL plugin
+- Use `useAsyncQuery` for GraphQL queries with SSR support.
+- Use `useMutation` for GraphQL mutations (if needed for WordPress).
+- Handle authentication tokens through Apollo Client configuration.
+- WordPress GraphQL endpoint should be configured in `useRuntimeConfig()`.
+- Always handle WordPress-specific GraphQL response structures.
+- Use proper error handling for WordPress GraphQL API responses.
+- Implement caching strategies for WordPress content (posts, pages, media).
+- Consider WordPress pagination patterns when fetching lists of content.
+- Use WordPress GraphQL fragments for reusable query parts.
+
+---
+
+## Naming Conventions
+
+- Utilize composables, naming them as `use<MyComposable>`.
+- Use **PascalCase** for component file names (e.g., `components/MyComponent.vue`).
+- Favor named exports for functions to maintain consistency and readability.
+- Use **camelCase** for variables, functions, and composables.
+- Use **UPPER_SNAKE_CASE** for constants.
+
+---
+
+## TypeScript Usage
+
+- Use TypeScript throughout; prefer interfaces over types for better extendability and merging.
+- Avoid enums, opting for maps for improved type safety and flexibility.
+- Use functional components with TypeScript interfaces.
+- Enable strict mode in TypeScript configuration.
+- Define proper types for all API responses, composables, and component props.
+
+---
+
+## UI and Styling
+
+- Use Nuxt UI and Tailwind CSS for components and styling.
+- Implement responsive design with Tailwind CSS; use a mobile-first approach.
+- Leverage Nuxt UI components whenever possible instead of creating custom components.
+- Use Tailwind CSS utility classes for styling; avoid inline styles.
+- Follow Nuxt UI design system and component patterns.
+
+---
+
+## i18n (Internationalization) - When Implemented
+
+- Use `@nuxtjs/i18n` module for internationalization.
+- Default locale: Turkish (tr)
+- Supported locales: Turkish (tr), English (en)
+- Strategy: `prefix_except_default`
+- Store translation files in `locales/` directory.
+- Use `useI18n()` composable for translations.
+- Always provide translations for both Turkish and English.
+- Use locale-aware routing with `useLocalePath()` and `useSwitchLocalePath()`.
+
+---
+
+## SEO Best Practices
+
+- Use `useHead()` and `useSeoMeta()` for page-specific SEO.
+- Implement locale-specific meta tags when i18n is active.
+- Use `@nuxtjs/seo` module features:
+  - Automatic robots.txt generation
+  - Sitemap generation
+  - Schema.org JSON-LD support
+  - Open Graph tags
+  - Canonical URLs
+- Ensure all pages have proper meta descriptions and titles.
+- Use semantic HTML elements.
+
+---
+
+## Server-Side Operations
+
+- Place all server-side logic in the `server/` directory.
+- Use `server/api/` for API endpoints.
+- Use `server/middleware/` for server middleware.
+- Never expose sensitive data or API keys to the client.
+- Use `useRuntimeConfig()` for environment-specific configuration.
+- Validate and sanitize all user inputs on the server side.
+
+### Cloudflare Pages Considerations
+- **Note**: Cloudflare Pages uses Edge Functions, not traditional Node.js server.
+- Server API routes (`server/api/`) will run on Cloudflare Workers/Edge Functions.
+- Ensure all server-side code is compatible with Cloudflare Workers runtime.
+- Avoid Node.js-specific APIs that are not available in Workers runtime.
+- Use Web APIs instead of Node.js APIs when possible.
+- For WordPress GraphQL, make requests from edge functions using `fetch` API.
+- Consider using Cloudflare KV or D1 for caching if needed.
+- Be aware of Cloudflare Workers execution time limits (CPU time limits).
+
+---
+
+## Error Handling
+
+- Implement proper error handling for all API calls.
+- Use Nuxt's error handling mechanisms (`showError`, `clearError`).
+- Provide user-friendly error messages.
+- Log errors appropriately on the server side.
+- Handle GraphQL errors gracefully when implemented.
+
+---
+
+## Performance Optimization
+
+- Leverage Nuxt 3's automatic code splitting.
+- Use lazy loading for non-critical components.
+- Optimize images with `<NuxtImage>` component.
+- Implement proper caching strategies for data fetching.
+- Minimize bundle size by using tree-shaking.
+- Use `lazy: true` for non-critical data fetching.
+
+---
+
+## Testing and Quality
+
+- Write maintainable and testable code.
+- Follow DRY (Don't Repeat Yourself) principles.
+- Keep components small and focused on a single responsibility.
+- Document complex logic and composables.
+- Use TypeScript for type safety.
+
+---
+
+## Git and Version Control
+
+- Write clear and descriptive commit messages.
+- Follow conventional commit format when possible.
+- Keep commits focused and atomic.
+- Review code before committing.
+
+---
+
+## Cloudflare Pages Deployment
+
+- **Deployment Platform**: Cloudflare Pages
+- **Build Command**: `npm run build` (or `nuxt build`)
+- **Output Directory**: `.output/public` (Nuxt 3 default)
+- **Node Version**: Use Node.js 18+ (check Cloudflare Pages compatibility)
+- **Environment Variables**: Configure in Cloudflare Pages dashboard
+  - WordPress GraphQL endpoint URL
+  - API keys and tokens
+  - Other runtime configuration
+
+### Cloudflare Pages Specific Rules
+- Ensure `nuxt.config.ts` is optimized for static/SSR hybrid rendering.
+- Use `nitro.preset = 'cloudflare-pages'` in nuxt.config.ts for optimal Cloudflare Pages support.
+- Test build locally before deploying: `npm run build && npm run preview`.
+- All environment variables must be set in Cloudflare Pages dashboard.
+- Use `useRuntimeConfig()` to access environment variables (both public and private).
+- Consider Cloudflare Pages edge caching for static assets.
+- Optimize for Cloudflare's global CDN distribution.
+- Test SSR functionality on Cloudflare Pages after deployment.
+
+### WordPress GraphQL Integration
+- **WordPress Plugin**: WPGraphQL must be installed and activated on WordPress.
+- **GraphQL Endpoint**: Typically `https://your-wordpress-site.com/graphql`
+- Store WordPress GraphQL endpoint in environment variables (not hardcoded).
+- Use `useRuntimeConfig()` to access WordPress GraphQL endpoint URL.
+- Implement proper error handling for WordPress API unavailability.
+- Consider implementing retry logic for WordPress GraphQL requests.
+- Cache WordPress content appropriately to reduce API calls.
+- Handle WordPress authentication if needed (for protected content).
+- Use WordPress GraphQL schema introspection for type generation if possible.
+
+## Additional Notes
+
+- Always consider SSR compatibility when writing code.
+- Ensure all components work correctly with server-side rendering.
+- Test both server and client-side rendering.
+- Test with Cloudflare Pages build environment before deploying.
+- Keep dependencies up to date.
+- Follow Nuxt 3 and Vue 3 best practices and conventions.
+- When implementing new features, refer to the `start.md` file for project roadmap.
+- Consider Cloudflare Workers runtime limitations when writing server-side code.
+
+---
+
+## Proje Özel Kurallar
+
+- Port 3000 kullanılacak (nuxt.config.ts'de yapılandırıldı - sadece development).
+- SSR her zaman aktif olmalı (production için kritik, Cloudflare Pages için gerekli).
+- Tüm yeni özellikler TypeScript ile yazılmalı.
+- Nuxt UI bileşenlerini tercih et; özel bileşen oluşturmadan önce Nuxt UI'da mevcut olup olmadığını kontrol et.
+- MCP Server (Nuxt UI) aktif - bileşen dokümantasyonu için kullanılabilir.
+- **Deployment**: Cloudflare Pages - tüm kod Cloudflare Workers runtime uyumlu olmalı.
+- **CMS**: WordPress GraphQL - tüm içerik WordPress'ten GraphQL ile çekilecek.
+- WordPress GraphQL endpoint URL'i environment variable olarak saklanmalı, asla hardcode edilmemeli.
+- Cloudflare Pages build sürecini test etmek için lokal build yapılmalı.
+- WordPress GraphQL sorguları için proper TypeScript type definitions oluşturulmalı.
