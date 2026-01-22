@@ -74,11 +74,9 @@ export default defineNuxtConfig({
     domains: ['picsum.photos']
   },
 
-  // Cloudflare Pages deployment configuration (only for production build)
-  $production: {
-    nitro: {
-      preset: 'cloudflare-pages'
-    }
+  // Cloudflare Pages deployment configuration
+  nitro: {
+    preset: 'cloudflare-pages'
   },
 
   // Runtime configuration for WordPress GraphQL and other environment variables

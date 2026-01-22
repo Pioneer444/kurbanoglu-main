@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev --port 3000",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "build": "NODE_OPTIONS=--no-deprecation nuxt build",
+    "dev": "NODE_OPTIONS=--no-deprecation nuxt dev --port 3000",
+    "generate": "NODE_OPTIONS=--no-deprecation nuxt generate",
+    "preview": "NODE_OPTIONS=--no-deprecation nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck"
