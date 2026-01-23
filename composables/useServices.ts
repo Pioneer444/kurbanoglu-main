@@ -52,30 +52,33 @@ export const services: Service[] = [
       'Büyük Ticari Binalar',
       'Altyapı Projeleri'
     ],
-    content: `Firmamız, enerji iletim ve dağıtım sistemlerinde güvenli, sürdürülebilir ve yüksek verimli çözümler sunmak amacıyla yüksek gerilim ve trafo hizmetleri alanında uçtan uca mühendislik hizmetleri sağlamaktadır. Tüm çalışmalarımız; TEDAŞ Teknik Şartnameleri, IEC, TS EN ve ilgili Elektrik Kuvvetli Akım Tesisleri Yönetmeliği başta olmak üzere yürürlükteki ulusal ve uluslararası standartlara uygun olarak gerçekleştirilmektedir.
+    content: `Firmamız, enerji iletim ve dağıtım sistemlerinde güvenli, sürdürülebilir ve yüksek verimli çözümler sunmak amacıyla Yüksek Gerilim İşletme Sorumluluğu & Müşavirlik Hizmetleri başta olmak üzere yüksek gerilim ve trafo tesislerine yönelik uçtan uca mühendislik hizmetleri sağlamaktadır. Tüm faaliyetlerimiz; Elektrik Kuvvetli Akım Tesisleri Yönetmeliği, TEDAŞ Teknik Şartnameleri, IEC, TS EN ve ilgili ulusal ve uluslararası standartlara tam uyumlu olarak yürütülmektedir.
 
-Hizmet kapsamımızda;
+Yüksek Gerilim İşletme Sorumluluğu & Müşavirlik Hizmetleri kapsamında; bölgemizde bulunan yüksek gerilim tesislerinin işletme sorumluluğu, trafo sorumluluğu ve yasal yükümlülükleri uzman mühendis kadromuz tarafından titizlikle takip edilmektedir. Aylık periyodik kontroller, test, ölçüm ve raporlama çalışmaları düzenli olarak gerçekleştirilmekte; olası riskler önceden tespit edilerek işletme sürekliliği ve tesis güvenliği sağlanmaktadır. Arıza ve acil durumlarda hızlı ve etkin müdahale ile yüksek gerilim tesislerinin güvenli işletilmesi temin edilmektedir.
 
-Trafo merkezi tasarımı ve projelendirilmesi,
+Firmamızın sunduğu Yüksek Gerilim İşletme Sorumluluğu & Müşavirlik Hizmetleri, yalnızca işletme aşamasıyla sınırlı olmayıp, yüksek gerilim tesislerinin tasarım, kurulum ve devreye alma süreçlerini de kapsamaktadır. Bu doğrultuda hizmet kapsamımızda;
 
-YG/AG trafo montajı ve devreye alma işlemleri,
+Trafo merkezi tasarımı ve projelendirilmesi
 
-Yüksek gerilim kablolama ve saha uygulamaları,
+YG/AG trafo montajı ve devreye alma işlemleri
 
-YG hücreler, kesiciler, ayırıcılar ve koruma ekipmanlarının kurulumu,
+Yüksek gerilim kablolama ve saha uygulamaları
 
-Topraklama ve yıldırımdan korunma sistemlerinin tasarımı ve ölçümleri,
+YG hücreler, kesiciler, ayırıcılar ve koruma ekipmanlarının kurulumu
 
-Röle koordinasyonu, kısa devre ve yük hesapları,
+Topraklama ve yıldırımdan korunma sistemlerinin tasarımı ve ölçümleri
+
+Röle koordinasyonu, kısa devre ve yük hesapları
 
 Trafo ve yüksek gerilim sistemleri için teknik müşavirlik ve kontrollük hizmetleri
-profesyonel mühendis kadromuz tarafından titizlikle yürütülmektedir.
 
-Yüksek gerilim kablolama ve bağlantı çalışmalarında; kablo güzergâh planlaması, minimum kayıp prensibi, mekanik ve termik zorlanmalar, izolasyon seviyeleri ve işletme sürekliliği esas alınmaktadır. Trafo seçiminde ise güç ihtiyacı, kısa devre dayanımı, verim sınıfı ve işletme koşulları dikkate alınarak optimum ve uzun ömürlü çözümler sunulmaktadır.
+profesyonel mühendis kadromuz tarafından mevzuata ve mühendislik esaslarına uygun şekilde yürütülmektedir.
 
-Ayrıca, trafo merkezleri ve yüksek gerilim tesisleri için geçici ve kesin kabul süreçlerine teknik destek, test ve ölçüm organizasyonları, işletme öncesi risk analizleri ve saha denetimleri de hizmetlerimiz arasında yer almaktadır. Amaç; tesislerin maksimum güvenlik, yüksek işletme sürekliliği ve minimum arıza riski ile devreye alınmasını sağlamaktır.
+Yüksek gerilim kablolama ve bağlantı çalışmalarında; kablo güzergâh planlaması, minimum kayıp prensibi, mekanik ve termik zorlanmalar, izolasyon seviyeleri ve işletme sürekliliği öncelikli kriterler olarak ele alınmaktadır. Trafo seçiminde ise güç ihtiyacı, kısa devre dayanımı, verim sınıfı ve işletme koşulları dikkate alınarak uzun ömürlü ve güvenilir çözümler sunulmaktadır.
 
-Firmamız, yüksek gerilim ve trafo projelerinde yalnızca bugünün ihtiyaçlarını değil, gelecekteki yük artışlarını ve işletme gereksinimlerini de göz önünde bulundurarak mühendislik odaklı, standartlara tam uyumlu ve güvenilir çözümler üretmektedir.`
+Ayrıca, Yüksek Gerilim İşletme Sorumluluğu & Müşavirlik Hizmetleri kapsamında trafo merkezleri ve yüksek gerilim tesisleri için geçici ve kesin kabul süreçlerine teknik destek verilmekte; test ve ölçüm organizasyonları, işletme öncesi risk analizleri ve saha denetimleri gerçekleştirilmektedir. Bu sayede tesislerin maksimum güvenlik, yüksek işletme sürekliliği ve minimum arıza riski ile devreye alınması sağlanmaktadır.
+
+Firmamız, Yüksek Gerilim İşletme Sorumluluğu & Müşavirlik Hizmetleri alanında yalnızca bugünün ihtiyaçlarını değil, gelecekteki yük artışlarını ve işletme gereksinimlerini de göz önünde bulundurarak; mühendislik odaklı, sürdürülebilir, standartlara tam uyumlu ve güvenilir çözümler üretmeyi ilke edinmiştir.`
   },
   {
     id: 2,
