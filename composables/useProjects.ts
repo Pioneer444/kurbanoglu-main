@@ -14,7 +14,7 @@ export const projects: Project[] = [
   // Tamamlanan Projeler
   {
     id: 1,
-    title: 'Mol Betro Kimya - Tiszaujvaros',
+    title: 'Macaristan - Tiszaujvaros - Mol Betro Kimya',
     category: 'Topraklama Sistemleri',
     image: '/images/projects/tamamlanan/1.jpeg',
     status: 'completed',
