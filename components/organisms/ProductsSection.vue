@@ -76,7 +76,7 @@ const products: Product[] = [
   {
     id: 1,
     title: 'Pano & Kompanzasyon<br>Malzemeleri',
-    image: panoImg
+    image: aydinlatmaImg
   },
   {
     id: 2,
@@ -91,7 +91,7 @@ const products: Product[] = [
   {
     id: 4,
     title: 'Aydınlatma<br>Ürünleri',
-    image: aydinlatmaImg
+    image: panoImg
   }
 ]
 </script>
