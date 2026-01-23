@@ -96,7 +96,7 @@ const navigationItems = [
   { label: 'Hizmetler', to: '/hizmetlerimiz' },
   { label: 'Projeler', to: '/projeler' },
   { label: 'Teknoloji', to: '/teknoloji' },
-  { label: 'Risk Hesabı', to: '/yildirim-risk-hesabi' },
+  { label: 'Yıldırım Risk Hesabı', to: '/yildirim-risk-hesabi' },
   { label: 'Blog', to: '/blog' },
   { label: 'İletişim', to: '/iletisim' }
 ]
