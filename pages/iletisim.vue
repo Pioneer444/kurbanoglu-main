@@ -56,17 +56,17 @@
               Hafta içi 09:00 - 18:00 arası<br>bize ulaşabilirsiniz.
             </p>
             <a 
-              href="tel:+902626463699"
+              href="tel:+905433603641"
               class="text-[16px] font-light text-[#111827] hover:text-[#009BE3] transition-colors"
               style="font-family: 'Inter', sans-serif;"
             >
-              Tel: 0 (262) 646 36 99
+              Tel: 0543 360 36 41
             </a>
             <p 
               class="text-[14px] font-light text-[#3d445c] mt-1"
               style="font-family: 'Inter', sans-serif;"
             >
-              Fax: 0 (262) 646 36 99
+              Fax: 0543 360 36 41
             </p>
           </div>
 
@@ -117,7 +117,7 @@
               class="text-[16px] font-light text-[#111827] leading-[1.6]"
               style="font-family: 'Inter', sans-serif;"
             >
-              öşklü Çeşme, 549. Sk. No:10A, 41400 Gebze/Kocaeli
+              Köşklü Çeşme, 549. Sk. No:10A, 41400 Gebze/Kocaeli
             </p>
           </div>
         </div>

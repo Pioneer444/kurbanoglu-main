@@ -38,7 +38,7 @@
         <div 
           v-for="product in products" 
           :key="product.id"
-          class="group bg-white rounded-[16px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+          class="group bg-white rounded-[16px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
         >
           <div class="overflow-hidden">
             <img 
