@@ -122,94 +122,31 @@
           </div>
         </div>
 
-        <!-- Form & Map Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
-          <!-- Contact Form -->
-          <div>
-            <p 
-              class="text-[14px] font-light text-[#009BE3] tracking-wider mb-2"
-              style="font-family: 'Inter', sans-serif;"
-            >
-              İletişim Formu
-            </p>
-            <h2 
-              class="text-[24px] md:text-[28px] font-semibold text-[#111827] mb-6"
-              style="font-family: 'Inter', sans-serif;"
-            >
-              Bize Yazın
-            </h2>
-            
-            <form @submit.prevent="handleSubmit" class="space-y-4">
-              <div>
-                <label 
-                  class="block text-[14px] font-light text-[#111827] mb-2"
-                  style="font-family: 'Inter', sans-serif;"
-                >
-                  E-Posta
-                </label>
-                <input 
-                  v-model="form.email"
-                  type="email"
-                  required
-                  class="w-full h-[40px] px-4 bg-white rounded-[8px] border border-gray-200 focus:border-[#064a81] focus:outline-none text-[14px]"
-                  style="font-family: 'Inter', sans-serif;"
-                  placeholder="ornek@email.com"
-                />
-              </div>
-              
-              <div>
-                <label 
-                  class="block text-[14px] font-light text-[#111827] mb-2"
-                  style="font-family: 'Inter', sans-serif;"
-                >
-                  Mesajınız
-                </label>
-                <textarea 
-                  v-model="form.message"
-                  required
-                  rows="8"
-                  class="w-full px-4 py-3 bg-white rounded-[8px] border border-gray-200 focus:border-[#064a81] focus:outline-none text-[14px] resize-none"
-                  style="font-family: 'Inter', sans-serif;"
-                  placeholder="Mesajınızı buraya yazın..."
-                />
-              </div>
-              
-              <button 
-                type="submit"
-                class="w-full h-[40px] md:h-[44px] bg-[#2766A7] rounded-[8px] text-[14px] font-medium text-white hover:bg-sky-500 transition-colors"
-                style="font-family: 'Inter', sans-serif;"
-              >
-                Mesajı Gönder
-              </button>
-            </form>
-          </div>
-
-          <!-- Map -->
-          <div>
-            <p 
-              class="text-[14px] font-light text-[#009BE3] tracking-wider mb-2"
-              style="font-family: 'Inter', sans-serif;"
-            >
-              Konum
-            </p>
-            <h2 
-              class="text-[24px] md:text-[28px] font-semibold text-[#111827] mb-6"
-              style="font-family: 'Inter', sans-serif;"
-            >
-              Ofisimizi Ziyaret Edin
-            </h2>
-            
-            <div class="w-full h-[300px] md:h-[360px] rounded-[16px] overflow-hidden">
-              <iframe 
-                src="https://www.google.com/maps?q=%C3%B6%C5%9Fkl%C3%BC%20%C3%87e%C5%9Fme%2C%20549.%20Sk.%20No%3A10A%2C%2041400%20Gebze%2FKocaeli&output=embed"
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-              />
-            </div>
+        <!-- Map Section -->
+        <div>
+          <p 
+            class="text-[14px] font-light text-[#009BE3] tracking-wider mb-2"
+            style="font-family: 'Inter', sans-serif;"
+          >
+            Konum
+          </p>
+          <h2 
+            class="text-[24px] md:text-[28px] font-semibold text-[#111827] mb-6"
+            style="font-family: 'Inter', sans-serif;"
+          >
+            Ofisimizi Ziyaret Edin
+          </h2>
+          
+          <div class="w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-[16px] overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps?q=K%C3%B6%C5%9Fkl%C3%BC+%C3%87e%C5%9Fme,+549.+Sk.+No%3A10A,+41400+Gebze%2FKocaeli&output=embed&zoom=15"
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>
@@ -290,11 +227,6 @@ useSeoMeta({
   ogDescription: 'Kurbanoğlu Mühendislik ile iletişime geçin. Sorularınız ve teklif talepleriniz için bize ulaşın.'
 })
 
-const form = ref({
-  email: '',
-  message: ''
-})
-
 const activeFaq = ref<number | null>(0)
 
 const faqs = [
@@ -322,12 +254,5 @@ const faqs = [
 
 const toggleFaq = (index: number) => {
   activeFaq.value = activeFaq.value === index ? null : index
-}
-
-const handleSubmit = () => {
-  // Form submission logic
-  console.log('Form submitted:', form.value)
-  alert('Mesajınız başarıyla gönderildi!')
-  form.value = { email: '', message: '' }
 }
 </script>
