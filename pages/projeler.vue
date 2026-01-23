@@ -57,7 +57,7 @@
             v-for="project in filteredProjects" 
             :key="project.id"
             :to="`/projeler/${project.slug}`"
-            class="group bg-[#212734] rounded-[20px] md:rounded-[24px] lg:rounded-[32px] p-4 md:p-5 lg:p-[22px] pb-5 lg:pb-[24px] hover:bg-[#2d3444] transition-all duration-300"
+            class="group bg-[#212734] rounded-[20px] md:rounded-[24px] lg:rounded-[32px] p-4 md:p-5 lg:p-[22px] pb-5 lg:pb-[24px] hover:bg-[#2d3444] transition-all duration-300 cursor-default"
           >
             <div class="overflow-hidden rounded-[10px] mb-4 lg:mb-[20px]">
               <img 
