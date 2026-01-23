@@ -113,7 +113,7 @@ const footerNav = [
 ]
 
 const socialLinks = [
-  { icon: linkedinIcon, to: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: linkedinIcon, to: 'https://www.linkedin.com/in/baycanak%C3%BCz%C3%BCm/', label: 'LinkedIn' },
   { icon: instagramIcon, to: 'https://instagram.com', label: 'Instagram' },
   { icon: facebookIcon, to: 'https://facebook.com', label: 'Facebook' }
 ]
