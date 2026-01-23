@@ -110,7 +110,8 @@ export default defineNuxtConfig({
       ],
       // Tailwind CSS CDN as fallback
       script: [
-        { src: 'https://cdn.tailwindcss.com', tagPosition: 'head' }
+        { src: 'https://cdn.tailwindcss.com', tagPosition: 'head' },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js', tagPosition: 'head' }
       ]
     }
   },

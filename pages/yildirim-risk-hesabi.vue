@@ -218,7 +218,7 @@
         </div>
 
         <!-- Results Section -->
-        <div v-else class="space-y-8">
+        <div v-else id="pdf-content" class="space-y-8">
           <!-- Header -->
           <div class="bg-[#212734] rounded-[16px] p-6 md:p-8 pdf-header-only">
             <div class="flex flex-col md:flex-row justify-between items-start gap-6">
@@ -1090,8 +1090,43 @@ function isCurrentLevel(range: string): boolean {
   return false
 }
 
-function printResults() {
-  window.print()
+async function printResults() {
+  // Check if html2pdf is available (loaded from CDN)
+  if (typeof window !== 'undefined' && (window as any).html2pdf) {
+    try {
+      const element = document.getElementById('pdf-content')
+      if (!element) {
+        // Fallback to window.print if element not found
+        window.print()
+        return
+      }
+
+      const opt = {
+        margin: [5, 5, 5, 5],
+        filename: 'yildirim-risk-hesabi.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+          scale: 2,
+          useCORS: true,
+          logging: false
+        },
+        jsPDF: { 
+          unit: 'mm', 
+          format: 'a4', 
+          orientation: 'portrait' 
+        }
+      }
+
+      await (window as any).html2pdf().set(opt).from(element).save()
+    } catch (error) {
+      console.error('PDF generation error:', error)
+      // Fallback to window.print if html2pdf fails
+      window.print()
+    }
+  } else {
+    // Fallback to window.print if html2pdf not loaded
+    window.print()
+  }
 }
 </script>
 
